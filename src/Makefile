@@ -11,7 +11,7 @@ CppExample: CppExample.cpp ../obj/libUseEnumeration.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
-### Enumeration Example ###
+##### Enumeration Example #####
 cleanEnumeration:
 	$(RMFORCE) Enumeration/UseEnumeration.o
 	$(RMFORCE) Enumeration/libUseEnumeration.a
