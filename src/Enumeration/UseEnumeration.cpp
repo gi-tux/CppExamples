@@ -5,6 +5,8 @@
  *      Author: kfulks
  */
 
+#include <iostream>
+
 #include "UseEnumeration.h"
 
 namespace gitux {
