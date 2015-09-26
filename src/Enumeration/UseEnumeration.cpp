@@ -13,55 +13,74 @@ namespace gitux {
 
 UseEnumeration::UseEnumeration() {
 	// TODO Auto-generated constructor stub
-	e_acompany myCar = Ford;
-	std::cout << this->getEnumValue(myCar) << std::endl;
+	e_shape myShape = Polygon;
+	std::cout << this->getEnumValue(myShape) << std::endl;
 }
 
 UseEnumeration::~UseEnumeration() {
 	// TODO Auto-generated destructor stub
 }
 
-std::string UseEnumeration::getEnumValue(e_acompany input) {
+std::string UseEnumeration::getEnumValue(e_shape input) {
 	std::string returnValue = "a";
+
 	switch (input) {
-	case e_acompany::Audi:
-		returnValue = this->audi;
+	case e_shape::ConicSection:
+		returnValue = this->conicSection;
 		break;
-	case e_acompany::BMW:
-		returnValue = this->bmw;
+	case e_shape::Circle:
+		returnValue = this->circle;
 		break;
-	case e_acompany::Cadillac:
-		returnValue = this->cadillac;
+	case e_shape::Ellipse:
+		returnValue = this->ellipse;
 		break;
-	case e_acompany::Chevrolet:
-		returnValue = this->chevrolet;
+	case e_shape::Parabola:
+		returnValue = this->parabola;
 		break;
-	case e_acompany::Chrysler:
-		returnValue = this->Chrysler;
+	case e_shape::Polygon:
+		returnValue = this->polygon;
 		break;
-	case e_acompany::Dodge:
-		returnValue = this->dodge;
+	case e_shape::Triangle:
+		returnValue = this->triangle;
 		break;
-	case e_acompany::Ford:
-		returnValue = this->ford;
+	case e_shape::Equilateral:
+		returnValue = this->equilateral;
 		break;
-	case e_acompany::Jaguar:
-		returnValue = this->jaguar;
+	case e_shape::Isosceles:
+		returnValue = this->isosceles;
 		break;
-	case e_acompany::Jeep:
-		returnValue = this->jeep;
+	case e_shape::Obtuse:
+		returnValue = this->obtuse;
 		break;
-	case e_acompany::Lexus:
-		returnValue = this->lexus;
+	case e_shape::Acute:
+		returnValue = this->acute;
 		break;
-	case e_acompany::RollsRoyce:
-		returnValue = this->rollsroyce;
+	case e_shape::Scalene:
+		returnValue = this->scalene;
 		break;
-	case e_acompany::Saab:
-		returnValue = this->saab;
+	case e_shape::Quadrilateral:
+		returnValue = this->quadrilateral;
 		break;
-	case e_acompany::Volvo:
-		returnValue = this->volvo;
+	case e_shape::Rectangle:
+		returnValue = this->rectangle;
+		break;
+	case e_shape::Square:
+		returnValue = this->square;
+		break;
+	case e_shape::Rhombus:
+		returnValue = this->rhombus;
+		break;
+	case e_shape::Trapezoid:
+		returnValue = this->trapezoid;
+		break;
+	case e_shape::Pentagon:
+		returnValue = this->pentagon;
+		break;
+	case e_shape::Hexagon:
+		returnValue = this->hexagon;
+		break;
+	case e_shape::Octagon:
+		returnValue = this->octagon;
 		break;
 	}
 	return returnValue;
