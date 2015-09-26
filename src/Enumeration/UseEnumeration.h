@@ -15,37 +15,50 @@ public:
 	UseEnumeration();
 	virtual ~UseEnumeration();
 
-	enum e_acompany {
-		Audi,
-		BMW,
-		Cadillac,
-		Chevrolet,
-		Chrysler,
-		Dodge,
-		Ford,
-		Jaguar,
-		Jeep,
-		Lexus,
-		RollsRoyce,
-		Saab,
-		Volvo
+	enum e_shape {
+		ConicSection,
+		Circle,
+		Ellipse,
+		Parabola,
+		Polygon,
+		Triangle,
+		Equilateral,
+		Isosceles,
+		Obtuse,
+		Acute,
+		Scalene,
+		Quadrilateral,
+		Rectangle,
+		Square,
+		Rhombus,
+		Trapezoid,
+		Pentagon,
+		Hexagon,
+		Octagon
 	};
 
-	std::string getEnumValue(e_acompany);
+	std::string getEnumValue(e_shape);
 
 private:
-	const std::string audi = "Audi";
-	const std::string bmw = "BMW";
-	const std::string cadillac = "Cadillac";
-	const std::string chevrolet = "Chevrolet";
-	const std::string dodge = "Dodge";
-	const std::string ford = "Ford";
-	const std::string jaguar = "Jaguar";
-	const std::string jeep = "Jeep";
-	const std::string lexus = "Lexus";
-	const std::string rollsroyce = "Rolls Royce";
-	const std::string saab = "Saab";
-	const std::string volvo = "Volvo";
+	const std::string conicSection = "Conic Section";
+	const std::string circle = "Circle";
+	const std::string ellipse = "Ellipse";
+	const std::string parabola = "Parabola";
+	const std::string polygon = "Polygon";
+	const std::string triangle = "Triangle";
+	const std::string equilateral = "Equilateral";
+	const std::string isosceles = "Isosceles";
+	const std::string obtuse = "Obtuse";
+	const std::string acute = "Acute";
+	const std::string scalene = "Scalene";
+	const std::string quadrilateral = "Quadrilateral";
+	const std::string rectangle = "Rectangle";
+	const std::string square = "Square";
+	const std::string rhombus = "Rhombus";
+	const std::string trapezoid = "Trapezoid";
+	const std::string pentagon = "Pentagon";
+	const std::string hexagon = "Hexagon";
+	const std::string octagon = "Octagon";
 };
 
 } /* namespace gitux */
