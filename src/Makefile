@@ -1,23 +1,22 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a
+all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
 
-clean: cleanEnumeration
+clean: cleanEnumeration cleanInheritance
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
+#########################################
 ##### Build the Enumeration Example #####
 cleanEnumeration:
 	$(RMFORCE) Enumeration/UseEnumeration.o
 	$(RMFORCE) Enumeration/libUseEnumeration.a
 	$(RMFORCE) ../obj/libUseEnumeration.a
-	$(RMFORCE) Enumeration/libUseEnumeration.so
-	$(RMFORCE) ../bin/libUseEnumeration.so
 	
 ../obj/libUseEnumeration.a: Enumeration/UseEnumeration.o
 	ar rvs Enumeration/libUseEnumeration.a Enumeration/UseEnumeration.o
@@ -25,4 +24,23 @@ cleanEnumeration:
 	
 Enumeration/UseEnumeration.o: Enumeration/UseEnumeration.cpp
 	$(CC) $(CFLAGS) $(INC) -o Enumeration/UseEnumeration.o Enumeration/UseEnumeration.cpp
+	
+
+#########################################
+##### Build the Inheritance Example #####
+cleanInheritance:
+	$(RMFORCE) Inheritance/Shape.o
+	$(RMFORCE) Inheritance/Circle.o
+	$(RMFORCE) Inheritance/libUseInheritance.a
+	$(RMFORCE) ../obj/libUseInheritance.a
+		
+../obj/libUseInheritance.a: Inheritance/Shape.o Inheritance/Circle.o
+	ar rvs Inheritance/libUseInheritance.a Inheritance/Shape.o Inheritance/Circle.o
+	cp Inheritance/libUseInheritance.a ../obj
+	
+Inheritance/Shape.o: Inheritance/Shape.cpp
+	$(CC) $(CFLAGS) $(INC) -o Inheritance/Shape.o Inheritance/Shape.cpp
+
+Inheritance/Circle.o: Inheritance/Circle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Inheritance/Circle.o Inheritance/Circle.cpp
 	
