@@ -8,7 +8,11 @@
 #ifndef SRC_ENUMERATION_USEENUMERATION_H_
 #define SRC_ENUMERATION_USEENUMERATION_H_
 
+#include <string>
+
 namespace gitux {
+
+using namespace std;
 
 class UseEnumeration {
 public:
@@ -37,28 +41,28 @@ public:
 		Octagon
 	};
 
-	std::string getEnumValue(e_shape);
+	string getEnumValue(e_shape);
 
 private:
-	const std::string conicSection = "Conic Section";
-	const std::string circle = "Circle";
-	const std::string ellipse = "Ellipse";
-	const std::string parabola = "Parabola";
-	const std::string polygon = "Polygon";
-	const std::string triangle = "Triangle";
-	const std::string equilateral = "Equilateral";
-	const std::string isosceles = "Isosceles";
-	const std::string obtuse = "Obtuse";
-	const std::string acute = "Acute";
-	const std::string scalene = "Scalene";
-	const std::string quadrilateral = "Quadrilateral";
-	const std::string rectangle = "Rectangle";
-	const std::string square = "Square";
-	const std::string rhombus = "Rhombus";
-	const std::string trapezoid = "Trapezoid";
-	const std::string pentagon = "Pentagon";
-	const std::string hexagon = "Hexagon";
-	const std::string octagon = "Octagon";
+	const string conicSection = "Conic Section";
+	const string circle = "Circle";
+	const string ellipse = "Ellipse";
+	const string parabola = "Parabola";
+	const string polygon = "Polygon";
+	const string triangle = "Triangle";
+	const string equilateral = "Equilateral";
+	const string isosceles = "Isosceles";
+	const string obtuse = "Obtuse";
+	const string acute = "Acute";
+	const string scalene = "Scalene";
+	const string quadrilateral = "Quadrilateral";
+	const string rectangle = "Rectangle";
+	const string square = "Square";
+	const string rhombus = "Rhombus";
+	const string trapezoid = "Trapezoid";
+	const string pentagon = "Pentagon";
+	const string hexagon = "Hexagon";
+	const string octagon = "Octagon";
 };
 
 } /* namespace gitux */

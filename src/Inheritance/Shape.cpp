@@ -5,9 +5,10 @@
  *      Author: kelly
  */
 
-#include <iostream>
-
 #include "Shape.h"
+
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -15,13 +16,12 @@ namespace gitux {
 Shape::Shape() :
 	height(0.0),
 	width(0.0),
-	radius(0.0) {
-	// TODO Auto-generated constructor stub
+	radius(0.0),
+	shapeType() {
 	cout << "Shape constructor" << endl;
 }
 
 Shape::~Shape() {
-	// TODO Auto-generated destructor stub
 	cout << "Shape destructor" << endl;
 }
 
@@ -30,7 +30,7 @@ void Shape::setHeight(double value) {
 }
 
 double Shape::getHeight() {
-	return height;
+	return (height);
 }
 
 void Shape::setWidth(double value) {
@@ -38,7 +38,7 @@ void Shape::setWidth(double value) {
 }
 
 double Shape::getWidth() {
-	return width;
+	return (width);
 }
 
 void Shape::setRadius(double value) {
@@ -46,7 +46,12 @@ void Shape::setRadius(double value) {
 }
 
 double Shape::getRadius() {
-	return radius;
+	return (radius);
+}
+
+string Shape::getShapeType() {
+	UseEnumeration *myEnum = new UseEnumeration();
+	return (myEnum->getEnumValue(shapeType));
 }
 
 } /* namespace gitux */

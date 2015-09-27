@@ -22,7 +22,7 @@ public:
 	Circle(double newRadius);
 	virtual ~Circle();
 
-	virtual double calculateArea();
+	virtual double getArea();
 
 	bool isCircle();
 };

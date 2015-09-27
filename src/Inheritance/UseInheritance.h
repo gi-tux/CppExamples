@@ -10,5 +10,7 @@
 
 #include "Shape.h"
 #include "Circle.h"
+#include "Rectangle.h"
+#include "Triangle.h"
 
 #endif /* SRC_INHERITANCE_USEINHERITANCE_H_ */

@@ -8,7 +8,11 @@
 #ifndef SRC_INHERITANCE_SHAPE_H_
 #define SRC_INHERITANCE_SHAPE_H_
 
+#include "UseEnumeration.h"
+
 namespace gitux {
+
+using namespace std;
 
 class Shape {
 public:
@@ -20,8 +24,9 @@ public:
 	double getWidth();
 	void setRadius(double value);
 	double getRadius();
+	string getShapeType();
 
-	virtual double calculateArea() = 0;
+	virtual double getArea() = 0;
 
 protected:
 	Shape();
@@ -29,6 +34,7 @@ protected:
 	double height;
 	double width;
 	double radius;
+	UseEnumeration::e_shape shapeType;
 };
 
 } /* namespace gitux */

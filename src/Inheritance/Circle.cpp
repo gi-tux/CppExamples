@@ -14,28 +14,29 @@ using namespace std;
 namespace gitux {
 
 Circle::Circle() {
+	shapeType = UseEnumeration::e_shape::Circle;
 	cout << "default Circle constructor" << endl;
 }
 
 Circle::Circle(double newRadius) {
+	shapeType = UseEnumeration::e_shape::Circle;
 	radius = newRadius;
 	cout << "alternate Circle constructor" << endl;
 }
 
 Circle::~Circle() {
-	// TODO Auto-generated destructor stub
 	cout << "Circle destructor" << endl;
 }
 
-double Circle::calculateArea() {
-	return M_PI * radius * radius;
+double Circle::getArea() {
+	return (M_PI * radius * radius);
 }
 
 bool Circle::isCircle() {
 	if (radius > 0) {
-		return true;
+		return (true);
 	} else {
-		return false;
+		return (false);
 	}
 }
 

@@ -31,11 +31,13 @@ Enumeration/UseEnumeration.o: Enumeration/UseEnumeration.cpp
 cleanInheritance:
 	$(RMFORCE) Inheritance/Shape.o
 	$(RMFORCE) Inheritance/Circle.o
+	$(RMFORCE) Inheritance/Rectangle.o
+	$(RMFORCE) Inheritance/Triangle.o
 	$(RMFORCE) Inheritance/libUseInheritance.a
 	$(RMFORCE) ../obj/libUseInheritance.a
 		
-../obj/libUseInheritance.a: Inheritance/Shape.o Inheritance/Circle.o
-	ar rvs Inheritance/libUseInheritance.a Inheritance/Shape.o Inheritance/Circle.o
+../obj/libUseInheritance.a: $(SHAPEOBJS)
+	ar rvs Inheritance/libUseInheritance.a $(SHAPEOBJS)
 	cp Inheritance/libUseInheritance.a ../obj
 	
 Inheritance/Shape.o: Inheritance/Shape.cpp
@@ -43,4 +45,10 @@ Inheritance/Shape.o: Inheritance/Shape.cpp
 
 Inheritance/Circle.o: Inheritance/Circle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Inheritance/Circle.o Inheritance/Circle.cpp
+
+Inheritance/Rectangle.o: Inheritance/Rectangle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Inheritance/Rectangle.o Inheritance/Rectangle.cpp
+
+Inheritance/Triangle.o: Inheritance/Triangle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Inheritance/Triangle.o Inheritance/Triangle.cpp
 	

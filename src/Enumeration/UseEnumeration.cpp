@@ -6,23 +6,22 @@
  */
 
 #include <iostream>
+#include <string>
 
 #include "UseEnumeration.h"
 
 namespace gitux {
 
+using namespace std;
+
 UseEnumeration::UseEnumeration() {
-	// TODO Auto-generated constructor stub
-	e_shape myShape = Polygon;
-	std::cout << this->getEnumValue(myShape) << std::endl;
 }
 
 UseEnumeration::~UseEnumeration() {
-	// TODO Auto-generated destructor stub
 }
 
-std::string UseEnumeration::getEnumValue(e_shape input) {
-	std::string returnValue = "a";
+string UseEnumeration::getEnumValue(e_shape input) {
+	string returnValue = "";
 
 	switch (input) {
 	case e_shape::ConicSection:
@@ -83,7 +82,7 @@ std::string UseEnumeration::getEnumValue(e_shape input) {
 		returnValue = this->octagon;
 		break;
 	}
-	return returnValue;
+	return (returnValue);
 }
 
 } /* namespace gitux */
