@@ -11,6 +11,7 @@
 
 #include "Enumeration/UseEnumeration.h"
 #include "Inheritance/UseInheritance.h"
+#include "Factory/UseFactory.h"
 
 using namespace std;
 using namespace gitux;
@@ -56,7 +57,22 @@ static void inheritanceExample() {
 	cout << "Is this a triangle? " << yesOrNo << endl;
 	cout << "Shape type is: " << triangle->getShapeType() << endl;
 	delete triangle;
-	cout << endl;
+}
+
+static void factoryExample() {
+	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
+	circle->setRadius(3);
+	cout << "Area of circle with a radius of " << circle->getRadius() << " is : "
+			<< circle->getArea() << endl;
+	delete circle;
+
+	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
+	rectangle->setHeight(3);
+	rectangle->setWidth(4);
+	cout << "Area of rectangle with a width of " << rectangle->getWidth()
+			<< " and a height of " << rectangle->getHeight()
+			<< " is : " << rectangle->getArea() << endl;
+	delete rectangle;
 }
 
 int main() {
@@ -69,4 +85,6 @@ int main() {
 	inheritanceExample();
 	cout << "=====" << endl << endl;
 
+	factoryExample();
+	cout << "=====" << endl << endl;
 }

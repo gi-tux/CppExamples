@@ -1,13 +1,13 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
+all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a
 
-clean: cleanEnumeration cleanInheritance
+clean: cleanEnumeration cleanInheritance cleanFactory
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -52,3 +52,16 @@ Inheritance/Rectangle.o: Inheritance/Rectangle.cpp
 Inheritance/Triangle.o: Inheritance/Triangle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Inheritance/Triangle.o Inheritance/Triangle.cpp
 	
+#####################################
+##### Build the Factory Example #####
+cleanFactory:
+	$(RMFORCE) Factory/UseFactory.o
+	$(RMFORCE) Factory/libUseFactory.a
+	$(RMFORCE) ../obj/libUseFactory.a
+
+../obj/libUseFactory.a: Factory/UseFactory.o ../obj/libUseInheritance.a
+	ar rvs Factory/libUseFactory.a Factory/UseFactory.o
+	cp Factory/libUseFactory.a ../obj
+	
+Factory/UseFactory.o: Factory/UseFactory.cpp
+	$(CC) $(CFLAGS) $(INC) -o Factory/UseFactory.o Factory/UseFactory.cpp
