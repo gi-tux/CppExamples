@@ -12,6 +12,7 @@
 #include "Enumeration/UseEnumeration.h"
 #include "Inheritance/UseInheritance.h"
 #include "Factory/UseFactory.h"
+#include "Vector/UseVector.h"
 
 using namespace std;
 using namespace gitux;
@@ -75,6 +76,23 @@ static void factoryExample() {
 	delete rectangle;
 }
 
+static void vectorExample() {
+	UseVector *vector = new UseVector();
+	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
+	circle->setRadius(3);
+	vector->pushBackVector(circle);
+	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
+	rectangle->setHeight(3);
+	rectangle->setWidth(4);
+	vector->pushBackVector(rectangle);
+	Shape *triangle = UseFactory::makeShape(UseEnumeration::e_shape::Triangle);
+	triangle->setHeight(3);
+	triangle->setWidth(4);
+	vector->pushBackVector(triangle);
+
+	vector->printVector();
+}
+
 int main() {
 	cout << "Hello, world!" << endl;
 	cout << "=====" << endl << endl;
@@ -86,5 +104,8 @@ int main() {
 	cout << "=====" << endl << endl;
 
 	factoryExample();
+	cout << "=====" << endl << endl;
+
+	vectorExample();
 	cout << "=====" << endl << endl;
 }

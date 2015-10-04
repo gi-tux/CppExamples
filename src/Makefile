@@ -3,11 +3,11 @@ include ../config/make.conf
 
 all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a
 
-clean: cleanEnumeration cleanInheritance cleanFactory
+clean: cleanEnumeration cleanInheritance cleanFactory cleanVector
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -65,3 +65,17 @@ cleanFactory:
 	
 Factory/UseFactory.o: Factory/UseFactory.cpp
 	$(CC) $(CFLAGS) $(INC) -o Factory/UseFactory.o Factory/UseFactory.cpp
+
+####################################
+##### Build the Vector Example #####
+cleanVector:
+	$(RMFORCE) Vector/UseVector.o
+	$(RMFORCE) Vector/libUseVector.a
+	$(RMFORCE) ../obj/libUseVector.a
+	
+../obj/libUseVector.a: Vector/UseVector.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
+	ar rvs Vector/libUseVector.a Vector/UseVector.o
+	cp Vector/libUseVector.a ../obj
+	
+Vector/UseVector.o: Vector/UseVector.cpp
+	$(CC) $(CFLAGS) $(INC) -o Vector/UseVector.o Vector/UseVector.cpp
