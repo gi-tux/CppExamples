@@ -22,9 +22,9 @@ public:
 	void pushBackVector(Shape *element);
 	void printVector();
 private:
-	void printElement(Circle element);
-	void printElement(Rectangle element);
-	void printElement(Triangle element);
+	void printElement(Circle *element);
+	void printElement(Rectangle *element);
+	void printElement(Triangle *element);
 	void printElement(Shape *element);
 
 	std::vector<Shape*> *shapeVector;

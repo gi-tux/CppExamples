@@ -91,6 +91,7 @@ static void vectorExample() {
 	vector->pushBackVector(triangle);
 
 	vector->printVector();
+	delete vector;
 }
 
 int main() {
