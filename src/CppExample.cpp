@@ -95,18 +95,23 @@ static void vectorExample() {
 }
 
 int main() {
+	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
 	cout << "=====" << endl << endl;
 
+	cout << "===== enumeration =====" << endl;
 	enumerationExample();
 	cout << "=====" << endl << endl;
 
+	cout << "===== inheritance =====" << endl;
 	inheritanceExample();
 	cout << "=====" << endl << endl;
 
+	cout << "===== factory =====" << endl;
 	factoryExample();
 	cout << "=====" << endl << endl;
 
+	cout << "===== vector =====" << endl;
 	vectorExample();
 	cout << "=====" << endl << endl;
 }
