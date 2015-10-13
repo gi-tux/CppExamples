@@ -1,13 +1,13 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a
+all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a
 
-clean: cleanEnumeration cleanInheritance cleanFactory cleanVector
+clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -79,3 +79,17 @@ cleanVector:
 	
 Vector/UseVector.o: Vector/UseVector.cpp
 	$(CC) $(CFLAGS) $(INC) -o Vector/UseVector.o Vector/UseVector.cpp
+
+####################################
+##### Build the Deque Example #####
+cleanDeque:
+	$(RMFORCE) Deque/UseDeque.o
+	$(RMFORCE) Deque/libUseDeque.a
+	$(RMFORCE) ../obj/libUseDeque.a
+	
+../obj/libUseDeque.a: Deque/UseDeque.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
+	ar rvs Deque/libUseDeque.a Deque/UseDeque.o
+	cp Deque/libUseDeque.a ../obj
+	
+Deque/UseDeque.o: Deque/UseDeque.cpp
+	$(CC) $(CFLAGS) $(INC) -o Deque/UseDeque.o Deque/UseDeque.cpp

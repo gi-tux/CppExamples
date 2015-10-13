@@ -13,6 +13,7 @@
 #include "Inheritance/UseInheritance.h"
 #include "Factory/UseFactory.h"
 #include "Vector/UseVector.h"
+#include "Deque/UseDeque.h"
 
 using namespace std;
 using namespace gitux;
@@ -94,6 +95,24 @@ static void vectorExample() {
 	delete vector;
 }
 
+static void dequeExample() {
+	UseDeque myDeque;
+	Shape *circle = new Circle(3);
+	Shape *rectangle = new Rectangle(3, 4);
+	Shape *triangle = new Triangle(3, 3);
+	Shape *shape;
+
+	myDeque.push(circle, UseDeque::end::front);
+	myDeque.push(rectangle, UseDeque::end::front);
+	myDeque.push(triangle, UseDeque::end::back);
+	myDeque.display();
+	shape = myDeque.pop(UseDeque::end::front);
+	cout << "**The area of " << shape->getShapeType() << " is " << shape->getArea() << endl;
+	shape = myDeque.pop(UseDeque::end::back);
+	cout << "**The area of " << shape->getShapeType() << " is " << shape->getArea() << endl;
+	myDeque.display();
+}
+
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
@@ -113,5 +132,9 @@ int main() {
 
 	cout << "===== vector =====" << endl;
 	vectorExample();
+	cout << "=====" << endl << endl;
+
+	cout << "===== deque =====" << endl;
+	dequeExample();
 	cout << "=====" << endl << endl;
 }
