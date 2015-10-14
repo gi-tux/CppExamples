@@ -101,15 +101,32 @@ static void dequeExample() {
 	Shape *rectangle = new Rectangle(3, 4);
 	Shape *triangle = new Triangle(3, 3);
 	Shape *shape;
+	string empty = myDeque.isEmpty() ? "true" : "false";
 
+	cout << "myDeque is empty: " << empty << endl;
+	cout << "The maximum size of myDeque is " << myDeque.maxsize() << endl;
 	myDeque.push(circle, UseDeque::end::front);
 	myDeque.push(rectangle, UseDeque::end::front);
 	myDeque.push(triangle, UseDeque::end::back);
+	cout << "myDeque has " << myDeque.size() << " entries." << endl;
 	myDeque.display();
 	shape = myDeque.pop(UseDeque::end::front);
 	cout << "**The area of " << shape->getShapeType() << " is " << shape->getArea() << endl;
 	shape = myDeque.pop(UseDeque::end::back);
 	cout << "**The area of " << shape->getShapeType() << " is " << shape->getArea() << endl;
+	cout << "The deque has " << myDeque.size() << " entries." << endl;
+	myDeque.display();
+	empty = myDeque.isEmpty() ? "true" : "false";
+	cout << "myDeque is empty: " << empty << endl;
+	myDeque.push(circle, UseDeque::end::front);
+	myDeque.push(rectangle, UseDeque::end::front);
+	myDeque.push(triangle, UseDeque::end::back);
+	myDeque.insert(2, circle);
+
+	deque<Shape*>::iterator iter = myDeque.iterator();
+	deque<Shape*>::reverse_iterator riter = myDeque.riterator();
+	cout << "Iterator shape type is " << (*iter)->getShapeType() << endl;
+	cout << "Reverse Iterator shape type is " << (*riter)->getShapeType() << endl;
 	myDeque.display();
 }
 
