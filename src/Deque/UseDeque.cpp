@@ -21,9 +21,9 @@ UseDeque::~UseDeque() {
 	// TODO Auto-generated destructor stub
 }
 
-//void UseDeque::insert(int position, Shape* newShape) {
-//	myDeque.insert(myDeque.begin() + position, *newShape, 1);
-//}
+void UseDeque::insert(int position, Shape* newShape) {
+	myDeque.insert(myDeque.begin() + position, newShape);
+}
 
 void UseDeque::display() {
 	deque<Shape*>::iterator p;
@@ -56,6 +56,26 @@ Shape* UseDeque::pop(end which) {
 		break;
 	}
 	return (returnValue);
+}
+
+int UseDeque::size() const {
+	return (myDeque.size());
+}
+
+unsigned int UseDeque::maxsize() const {
+	return (myDeque.max_size());
+}
+
+bool UseDeque::isEmpty() const {
+	return (myDeque.empty());
+}
+
+deque<Shape*>::iterator UseDeque::iterator() {
+	return (myDeque.begin());
+}
+
+deque<Shape*>::reverse_iterator UseDeque::riterator() {
+	return (myDeque.rbegin());
 }
 
 } /* namespace gitux */

@@ -33,11 +33,12 @@ public:
 	void display(void);
 	void push(Shape*, end);
 	Shape* pop(end);
-//	int size(void) const;
-//	int maxsize(void) const;
-//	bool empty(void) const;
-//	void insert(int, Shape*);
-//	void iterator(end);
+	int size(void) const;
+	unsigned int maxsize(void) const;
+	bool isEmpty(void) const;
+	void insert(int, Shape*);
+	deque<Shape*>::iterator iterator();
+	deque<Shape*>::reverse_iterator riterator();
 
 private:
 	static void print(int);
