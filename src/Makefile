@@ -1,13 +1,13 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a
+all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a
 
-clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque
+clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -93,3 +93,25 @@ cleanDeque:
 	
 Deque/UseDeque.o: Deque/UseDeque.cpp
 	$(CC) $(CFLAGS) $(INC) -o Deque/UseDeque.o Deque/UseDeque.cpp
+
+####################################
+##### Build the Reference Example #####
+cleanReference:
+	$(RMFORCE) Reference/UseReference.o
+	$(RMFORCE) Reference/ObjectReference1.o
+	$(RMFORCE) Reference/libUseReference.a
+	$(RMFORCE) ../obj/libUseReference.a
+	
+../obj/libUseReference.a: Reference/UseReference.o Reference/ObjectReference1.o Reference/ObjectReference2.o
+	ar rvs Reference/libUseReference.a Reference/UseReference.o Reference/ObjectReference1.o Reference/ObjectReference2.o
+	cp Reference/libUseReference.a ../obj
+	
+Reference/UseReference.o: Reference/UseReference.cpp
+	$(CC) $(CFLAGS) $(INC) -o Reference/UseReference.o Reference/UseReference.cpp
+	
+Reference/ObjectReference1.o: Reference/ObjectReference1.cpp
+	$(CC) $(CFLAGS) $(INC) -o Reference/ObjectReference1.o Reference/ObjectReference1.cpp
+	
+Reference/ObjectReference2.o: Reference/ObjectReference2.cpp
+	$(CC) $(CFLAGS) $(INC) -o Reference/ObjectReference2.o Reference/ObjectReference2.cpp
+	

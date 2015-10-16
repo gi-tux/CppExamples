@@ -14,6 +14,7 @@
 #include "Factory/UseFactory.h"
 #include "Vector/UseVector.h"
 #include "Deque/UseDeque.h"
+#include "Reference/UseReference.h"
 
 using namespace std;
 using namespace gitux;
@@ -130,6 +131,12 @@ static void dequeExample() {
 	myDeque.display();
 }
 
+static void referenceExample() {
+	UseReference myReference;
+
+	myReference.Reference2Pointer();
+}
+
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
@@ -153,5 +160,9 @@ int main() {
 
 	cout << "===== deque =====" << endl;
 	dequeExample();
+	cout << "=====" << endl << endl;
+
+	cout << "===== reference =====" << endl;
+	referenceExample();
 	cout << "=====" << endl << endl;
 }
