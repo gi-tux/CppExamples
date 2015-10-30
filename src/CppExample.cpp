@@ -15,6 +15,7 @@
 #include "Vector/UseVector.h"
 #include "Deque/UseDeque.h"
 #include "Reference/UseReference.h"
+#include "Overload/UseOverload.h"
 
 using namespace std;
 using namespace gitux;
@@ -137,6 +138,13 @@ static void referenceExample() {
 	myReference.Reference2Pointer();
 }
 
+static void overloadExample() {
+	UseOverload myOverload;
+
+	myOverload.printNumber(1);
+	myOverload.printNumber(2.1);
+}
+
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
@@ -164,5 +172,9 @@ int main() {
 
 	cout << "===== reference =====" << endl;
 	referenceExample();
+	cout << "=====" << endl << endl;
+
+	cout << "===== overload =====" << endl;
+	overloadExample();
 	cout << "=====" << endl << endl;
 }
