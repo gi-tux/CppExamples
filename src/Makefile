@@ -1,13 +1,13 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a
+all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a
 
-clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference
+clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -114,4 +114,17 @@ Reference/ObjectReference1.o: Reference/ObjectReference1.cpp
 	
 Reference/ObjectReference2.o: Reference/ObjectReference2.cpp
 	$(CC) $(CFLAGS) $(INC) -o Reference/ObjectReference2.o Reference/ObjectReference2.cpp
+
+####################################
+##### Build the Overload Example #####
+cleanOverload:
+	$(RMFORCE) Overload/UseOverload.o
+	$(RMFORCE) Overload/libUseOverload.a
+	$(RMFORCE) ../obj/libUseOverload.a
 	
+../obj/libUseOverload.a: Overload/UseOverload.o
+	ar rvs Overload/libUseOverload.a Overload/UseOverload.o
+	cp Overload/libUseOverload.a ../obj
+	
+Overload/UseOverload.o: Overload/UseOverload.cpp
+	$(CC) $(CFLAGS) $(INC) -o Overload/UseOverload.o Overload/UseOverload.cpp
