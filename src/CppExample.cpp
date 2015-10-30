@@ -11,11 +11,11 @@
 
 #include "Enumeration/UseEnumeration.h"
 #include "Inheritance/UseInheritance.h"
-#include "Factory/UseFactory.h"
 #include "Vector/UseVector.h"
 #include "Deque/UseDeque.h"
 #include "Reference/UseReference.h"
 #include "Overload/UseOverload.h"
+#include "Pattern/Factory/UseFactory.h"
 
 using namespace std;
 using namespace gitux;
@@ -61,22 +61,6 @@ static void inheritanceExample() {
 	cout << "Is this a triangle? " << yesOrNo << endl;
 	cout << "Shape type is: " << triangle->getShapeType() << endl;
 	delete triangle;
-}
-
-static void factoryExample() {
-	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
-	circle->setRadius(3);
-	cout << "Area of circle with a radius of " << circle->getRadius() << " is : "
-			<< circle->getArea() << endl;
-	delete circle;
-
-	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
-	rectangle->setHeight(3);
-	rectangle->setWidth(4);
-	cout << "Area of rectangle with a width of " << rectangle->getWidth()
-			<< " and a height of " << rectangle->getHeight()
-			<< " is : " << rectangle->getArea() << endl;
-	delete rectangle;
 }
 
 static void vectorExample() {
@@ -145,6 +129,22 @@ static void overloadExample() {
 	myOverload.printNumber(2.1);
 }
 
+static void factoryExample() {
+	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
+	circle->setRadius(3);
+	cout << "Area of circle with a radius of " << circle->getRadius() << " is : "
+			<< circle->getArea() << endl;
+	delete circle;
+
+	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
+	rectangle->setHeight(3);
+	rectangle->setWidth(4);
+	cout << "Area of rectangle with a width of " << rectangle->getWidth()
+			<< " and a height of " << rectangle->getHeight()
+			<< " is : " << rectangle->getArea() << endl;
+	delete rectangle;
+}
+
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
@@ -156,10 +156,6 @@ int main() {
 
 	cout << "===== inheritance =====" << endl;
 	inheritanceExample();
-	cout << "=====" << endl << endl;
-
-	cout << "===== factory =====" << endl;
-	factoryExample();
 	cout << "=====" << endl << endl;
 
 	cout << "===== vector =====" << endl;
@@ -176,5 +172,10 @@ int main() {
 
 	cout << "===== overload =====" << endl;
 	overloadExample();
+	cout << "=====" << endl << endl;
+
+	/* Design Pattern Examples */
+	cout << "===== factory =====" << endl;
+	factoryExample();
 	cout << "=====" << endl << endl;
 }

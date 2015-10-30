@@ -5,8 +5,8 @@
  *      Author: kelly
  */
 
-#ifndef SRC_FACTORY_USEFACTORY_H_
-#define SRC_FACTORY_USEFACTORY_H_
+#ifndef SRC_PATTERN_FACTORY_USEFACTORY_H_
+#define SRC_PATTERN_FACTORY_USEFACTORY_H_
 
 #include "UseEnumeration.h"
 #include "UseInheritance.h"
@@ -24,4 +24,4 @@ private:
 
 } /* namespace gitux */
 
-#endif /* SRC_FACTORY_USEFACTORY_H_ */
+#endif /* SRC_PATTERN_FACTORY_USEFACTORY_H_ */

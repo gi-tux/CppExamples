@@ -52,20 +52,6 @@ Inheritance/Rectangle.o: Inheritance/Rectangle.cpp
 Inheritance/Triangle.o: Inheritance/Triangle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Inheritance/Triangle.o Inheritance/Triangle.cpp
 	
-#####################################
-##### Build the Factory Example #####
-cleanFactory:
-	$(RMFORCE) Factory/UseFactory.o
-	$(RMFORCE) Factory/libUseFactory.a
-	$(RMFORCE) ../obj/libUseFactory.a
-
-../obj/libUseFactory.a: Factory/UseFactory.o ../obj/libUseInheritance.a
-	ar rvs Factory/libUseFactory.a Factory/UseFactory.o
-	cp Factory/libUseFactory.a ../obj
-	
-Factory/UseFactory.o: Factory/UseFactory.cpp
-	$(CC) $(CFLAGS) $(INC) -o Factory/UseFactory.o Factory/UseFactory.cpp
-
 ####################################
 ##### Build the Vector Example #####
 cleanVector:
@@ -128,3 +114,17 @@ cleanOverload:
 	
 Overload/UseOverload.o: Overload/UseOverload.cpp
 	$(CC) $(CFLAGS) $(INC) -o Overload/UseOverload.o Overload/UseOverload.cpp
+
+#####################################
+##### Build the Factory Example #####
+cleanFactory:
+	$(RMFORCE) Pattern/Factory/UseFactory.o
+	$(RMFORCE) Pattern/Factory/libUseFactory.a
+	$(RMFORCE) ../obj/libUseFactory.a
+
+../obj/libUseFactory.a: Pattern/Factory/UseFactory.o ../obj/libUseInheritance.a
+	ar rvs Pattern/Factory/libUseFactory.a Pattern/Factory/UseFactory.o
+	cp Pattern/Factory/libUseFactory.a ../obj
+	
+Pattern/Factory/UseFactory.o: Pattern/Factory/UseFactory.cpp
+	$(CC) $(CFLAGS) $(INC) -o Pattern/Factory/UseFactory.o Pattern/Factory/UseFactory.cpp
