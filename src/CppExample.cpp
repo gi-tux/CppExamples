@@ -15,6 +15,7 @@
 #include "Deque/UseDeque.h"
 #include "Reference/UseReference.h"
 #include "Overload/UseOverload.h"
+#include "Pattern/Builder/UseBuilder.h"
 #include "Pattern/Factory/UseFactory.h"
 
 using namespace std;
@@ -129,6 +130,24 @@ static void overloadExample() {
 	myOverload.printNumber(2.1);
 }
 
+static void builderExample() {
+	ShapeBuilder *myRectangleBuilder = new RectangleBuilder();
+	myRectangleBuilder->createShape();
+	myRectangleBuilder->setHeight();
+	myRectangleBuilder->setWidth();
+	Shape *myRectangle = myRectangleBuilder->getShape();
+	cout << "Area of the Rectangle is: " << myRectangle->getArea() << endl;
+	delete myRectangleBuilder;
+
+	ShapeBuilder *myTriangleBuilder = new TriangleBuilder();
+	myTriangleBuilder->createShape();
+	myTriangleBuilder->setHeight();
+	myTriangleBuilder->setWidth();
+	Shape *myTriangle = myTriangleBuilder->getShape();
+	cout << "Area of the Triangle is: " << myTriangle->getArea() << endl;
+	delete myTriangleBuilder;
+}
+
 static void factoryExample() {
 	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
 	circle->setRadius(3);
@@ -175,6 +194,11 @@ int main() {
 	cout << "=====" << endl << endl;
 
 	/* Design Pattern Examples */
+
+	cout << "===== builder =====" << endl;
+	builderExample();
+	cout << "=====" << endl << endl;
+
 	cout << "===== factory =====" << endl;
 	factoryExample();
 	cout << "=====" << endl << endl;
