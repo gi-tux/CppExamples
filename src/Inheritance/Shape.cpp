@@ -50,8 +50,11 @@ double Shape::getRadius() {
 }
 
 string Shape::getShapeType() {
+	string enumType;
 	UseEnumeration *myEnum = new UseEnumeration();
-	return (myEnum->getEnumValue(shapeType));
+	enumType = myEnum->getEnumValue(shapeType);
+	delete myEnum;
+	return (enumType);
 }
 
 } /* namespace gitux */
