@@ -5,11 +5,12 @@
  *      Author: kfulks
  */
 
+#include "../../Concept/Reference/UseReference.h"
+
 #include <iostream>
 
-#include "UseReference.h"
-#include "ObjectReference1.h"
-#include "ObjectReference2.h"
+#include "../../Concept/Reference/ObjectReference1.h"
+#include "../../Concept/Reference/ObjectReference2.h"
 
 namespace gitux {
 

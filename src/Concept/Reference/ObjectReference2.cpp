@@ -5,9 +5,10 @@
  *      Author: kfulks
  */
 
+#include "../../Concept/Reference/ObjectReference2.h"
+
 #include <iostream>
 
-#include "ObjectReference2.h"
 
 namespace gitux {
 

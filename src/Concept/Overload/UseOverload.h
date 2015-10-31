@@ -5,8 +5,8 @@
  *      Author: kelly
  */
 
-#ifndef SRC_OVERLOAD_USEOVERLOAD_H_
-#define SRC_OVERLOAD_USEOVERLOAD_H_
+#ifndef SRC_CONCEPT_OVERLOAD_USEOVERLOAD_H_
+#define SRC_CONCEPT_OVERLOAD_USEOVERLOAD_H_
 
 namespace gitux {
 
@@ -21,4 +21,4 @@ public:
 
 } /* namespace gitux */
 
-#endif /* SRC_OVERLOAD_USEOVERLOAD_H_ */
+#endif /* SRC_CONCEPT_OVERLOAD_USEOVERLOAD_H_ */

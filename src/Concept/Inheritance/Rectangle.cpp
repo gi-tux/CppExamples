@@ -5,7 +5,7 @@
  *      Author: kelly
  */
 
-#include "Rectangle.h"
+#include "../../Concept/Inheritance/Rectangle.h"
 
 #include <iostream>
 
