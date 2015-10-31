@@ -10,7 +10,7 @@
 
 #include <vector>
 
-#include "UseInheritance.h"
+#include "../Concepts/Inheritance/UseInheritance.h"
 
 namespace gitux {
 

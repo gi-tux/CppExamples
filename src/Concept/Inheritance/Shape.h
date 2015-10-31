@@ -5,8 +5,8 @@
  *      Author: kelly
  */
 
-#ifndef SRC_INHERITANCE_SHAPE_H_
-#define SRC_INHERITANCE_SHAPE_H_
+#ifndef SRC_CONCEPT_INHERITANCE_SHAPE_H_
+#define SRC_CONCEPT_INHERITANCE_SHAPE_H_
 
 #include "UseEnumeration.h"
 
@@ -39,4 +39,4 @@ protected:
 
 } /* namespace gitux */
 
-#endif /* SRC_INHERITANCE_SHAPE_H_ */
+#endif /* SRC_CONCEPT_INHERITANCE_SHAPE_H_ */

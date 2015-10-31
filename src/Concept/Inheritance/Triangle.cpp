@@ -5,9 +5,10 @@
  *      Author: kelly
  */
 
+#include "../../Concept/Inheritance/Triangle.h"
+
 #include <iostream>
 
-#include "Triangle.h"
 
 namespace gitux {
 

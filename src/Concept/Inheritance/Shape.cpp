@@ -5,7 +5,7 @@
  *      Author: kelly
  */
 
-#include "Shape.h"
+#include "../../Concept/Inheritance/Shape.h"
 
 #include <iostream>
 #include <string>

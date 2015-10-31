@@ -9,12 +9,12 @@
 #include <iostream>
 #include <string>
 
+#include "Concept/Inheritance/UseInheritance.h"
+#include "Concept/Overload/UseOverload.h"
+#include "Concept/Reference/UseReference.h"
 #include "Enumeration/UseEnumeration.h"
-#include "Inheritance/UseInheritance.h"
 #include "Vector/UseVector.h"
 #include "Deque/UseDeque.h"
-#include "Reference/UseReference.h"
-#include "Overload/UseOverload.h"
 #include "Pattern/Builder/UseBuilder.h"
 #include "Pattern/Factory/UseFactory.h"
 

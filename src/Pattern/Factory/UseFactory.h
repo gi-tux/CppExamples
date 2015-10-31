@@ -8,8 +8,8 @@
 #ifndef SRC_PATTERN_FACTORY_USEFACTORY_H_
 #define SRC_PATTERN_FACTORY_USEFACTORY_H_
 
+#include "../../Concepts/Inheritance/UseInheritance.h"
 #include "UseEnumeration.h"
-#include "UseInheritance.h"
 
 namespace gitux {
 

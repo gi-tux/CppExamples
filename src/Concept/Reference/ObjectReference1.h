@@ -5,8 +5,8 @@
  *      Author: kfulks
  */
 
-#ifndef SRC_REFERENCE_OBJECTREFERENCE1_H_
-#define SRC_REFERENCE_OBJECTREFERENCE1_H_
+#ifndef SRC_CONCEPT_REFERENCE_OBJECTREFERENCE1_H_
+#define SRC_CONCEPT_REFERENCE_OBJECTREFERENCE1_H_
 
 namespace gitux {
 
@@ -28,4 +28,4 @@ private:
 
 } /* namespace gitux */
 
-#endif /* SRC_REFERENCE_OBJECTREFERENCE1_H_ */
+#endif /* SRC_CONCEPT_REFERENCE_OBJECTREFERENCE1_H_ */

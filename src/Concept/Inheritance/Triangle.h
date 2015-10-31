@@ -5,10 +5,10 @@
  *      Author: kelly
  */
 
-#ifndef SRC_INHERITANCE_TRIANGLE_H_
-#define SRC_INHERITANCE_TRIANGLE_H_
+#ifndef SRC_CONCEPT_INHERITANCE_TRIANGLE_H_
+#define SRC_CONCEPT_INHERITANCE_TRIANGLE_H_
 
-#include "Shape.h"
+#include "../../Concept/Inheritance/Shape.h"
 
 namespace gitux {
 
@@ -25,4 +25,4 @@ public:
 
 } /* namespace gitux */
 
-#endif /* SRC_INHERITANCE_TRIANGLE_H_ */
+#endif /* SRC_CONCEPT_INHERITANCE_TRIANGLE_H_ */

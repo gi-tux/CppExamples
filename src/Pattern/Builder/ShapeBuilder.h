@@ -8,7 +8,7 @@
 #ifndef SRC_PATTERN_BUILDER_SHAPEBUILDER_H_
 #define SRC_PATTERN_BUILDER_SHAPEBUILDER_H_
 
-#include "UseInheritance.h"
+#include "../../Concepts/Inheritance/UseInheritance.h"
 
 namespace gitux {
 

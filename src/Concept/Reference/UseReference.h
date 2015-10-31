@@ -5,8 +5,8 @@
  *      Author: kfulks
  */
 
-#ifndef SRC_REFERENCE_USEREFERENCE_H_
-#define SRC_REFERENCE_USEREFERENCE_H_
+#ifndef SRC_CONCEPT_REFERENCE_USEREFERENCE_H_
+#define SRC_CONCEPT_REFERENCE_USEREFERENCE_H_
 
 namespace gitux {
 
@@ -20,4 +20,4 @@ public:
 
 } /* namespace gitux */
 
-#endif /* SRC_REFERENCE_USEREFERENCE_H_ */
+#endif /* SRC_CONCEPT_REFERENCE_USEREFERENCE_H_ */
