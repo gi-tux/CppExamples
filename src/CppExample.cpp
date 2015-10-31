@@ -115,6 +115,9 @@ static void dequeExample() {
 	cout << "Iterator shape type is " << (*iter)->getShapeType() << endl;
 	cout << "Reverse Iterator shape type is " << (*riter)->getShapeType() << endl;
 	myDeque.display();
+	delete triangle;
+	delete rectangle;
+	delete circle;
 }
 
 static void referenceExample() {
