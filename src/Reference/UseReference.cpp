@@ -65,7 +65,6 @@ void UseReference::Reference2Pointer() {
 	*four = NULL;
 	myObjRef1.PrintReference2();
 	delete four;
-	myObjRef1.PrintReference2();
 	cout << "**" << endl;
 }
 
