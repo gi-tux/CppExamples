@@ -5,7 +5,7 @@
  *      Author: kelly
  */
 
-#include "../Pattern/Factory/UseFactory.h"
+#include "UseFactory.h"
 
 namespace gitux {
 

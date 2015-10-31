@@ -1,7 +1,7 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a
+all: CppExample // ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a
 
 clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder
 	$(RMFORCE) CppExample
@@ -10,6 +10,9 @@ clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cle
 CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
+
+#########################################
+#####      The Type Examples        #####
 
 #########################################
 ##### Build the Enumeration Example #####
@@ -24,33 +27,6 @@ cleanEnumeration:
 	
 Enumeration/UseEnumeration.o: Enumeration/UseEnumeration.cpp
 	$(CC) $(CFLAGS) $(INC) -o Enumeration/UseEnumeration.o Enumeration/UseEnumeration.cpp
-	
-
-#########################################
-##### Build the Inheritance Example #####
-cleanInheritance:
-	$(RMFORCE) Inheritance/Shape.o
-	$(RMFORCE) Inheritance/Circle.o
-	$(RMFORCE) Inheritance/Rectangle.o
-	$(RMFORCE) Inheritance/Triangle.o
-	$(RMFORCE) Inheritance/libUseInheritance.a
-	$(RMFORCE) ../obj/libUseInheritance.a
-		
-../obj/libUseInheritance.a: $(SHAPEOBJS)
-	ar rvs Inheritance/libUseInheritance.a $(SHAPEOBJS)
-	cp Inheritance/libUseInheritance.a ../obj
-	
-Inheritance/Shape.o: Inheritance/Shape.cpp
-	$(CC) $(CFLAGS) $(INC) -o Inheritance/Shape.o Inheritance/Shape.cpp
-
-Inheritance/Circle.o: Inheritance/Circle.cpp
-	$(CC) $(CFLAGS) $(INC) -o Inheritance/Circle.o Inheritance/Circle.cpp
-
-Inheritance/Rectangle.o: Inheritance/Rectangle.cpp
-	$(CC) $(CFLAGS) $(INC) -o Inheritance/Rectangle.o Inheritance/Rectangle.cpp
-
-Inheritance/Triangle.o: Inheritance/Triangle.cpp
-	$(CC) $(CFLAGS) $(INC) -o Inheritance/Triangle.o Inheritance/Triangle.cpp
 	
 ####################################
 ##### Build the Vector Example #####
@@ -67,7 +43,7 @@ Vector/UseVector.o: Vector/UseVector.cpp
 	$(CC) $(CFLAGS) $(INC) -o Vector/UseVector.o Vector/UseVector.cpp
 
 ####################################
-##### Build the Deque Example #####
+##### Build the Deque Example  #####
 cleanDeque:
 	$(RMFORCE) Deque/UseDeque.o
 	$(RMFORCE) Deque/libUseDeque.a
@@ -80,40 +56,72 @@ cleanDeque:
 Deque/UseDeque.o: Deque/UseDeque.cpp
 	$(CC) $(CFLAGS) $(INC) -o Deque/UseDeque.o Deque/UseDeque.cpp
 
+#########################################
+#####     The Concept Examples      #####
+
+#########################################
+##### Build the Inheritance Example #####
+cleanInheritance:
+	$(RMFORCE) Concept/Inheritance/Shape.o
+	$(RMFORCE) Concept/Inheritance/Circle.o
+	$(RMFORCE) Concept/Inheritance/Rectangle.o
+	$(RMFORCE) Concept/Inheritance/Triangle.o
+	$(RMFORCE) Concept/Inheritance/libUseInheritance.a
+	$(RMFORCE) ../obj/libUseInheritance.a
+		
+../obj/libUseInheritance.a: $(SHAPEOBJS)
+	ar rvs Concept/Inheritance/libUseInheritance.a $(SHAPEOBJS)
+	cp Concept/Inheritance/libUseInheritance.a ../obj
+	
+Concept/Inheritance/Shape.o: Concept/Inheritance/Shape.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Shape.o Concept/Inheritance/Shape.cpp
+
+Concept/Inheritance/Circle.o: Concept/Inheritance/Circle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Circle.o Concept/Inheritance/Circle.cpp
+
+Concept/Inheritance/Rectangle.o: Concept/Inheritance/Rectangle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Rectangle.o Concept/Inheritance/Rectangle.cpp
+
+Concept/Inheritance/Triangle.o: Concept/Inheritance/Triangle.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Triangle.o Concept/Inheritance/Triangle.cpp
+	
 ####################################
 ##### Build the Reference Example #####
 cleanReference:
-	$(RMFORCE) Reference/UseReference.o
-	$(RMFORCE) Reference/ObjectReference1.o
-	$(RMFORCE) Reference/libUseReference.a
+	$(RMFORCE) Concept/Reference/UseReference.o
+	$(RMFORCE) Concept/Reference/ObjectReference1.o
+	$(RMFORCE) Concept/Reference/libUseReference.a
 	$(RMFORCE) ../obj/libUseReference.a
 	
-../obj/libUseReference.a: Reference/UseReference.o Reference/ObjectReference1.o Reference/ObjectReference2.o
-	ar rvs Reference/libUseReference.a Reference/UseReference.o Reference/ObjectReference1.o Reference/ObjectReference2.o
-	cp Reference/libUseReference.a ../obj
+../obj/libUseReference.a: Concept/Reference/UseReference.o Concept/Reference/ObjectReference1.o Concept/Reference/ObjectReference2.o
+	ar rvs Concept/Reference/libUseReference.a Concept/Reference/UseReference.o Concept/Reference/ObjectReference1.o Concept/Reference/ObjectReference2.o
+	cp Concept/Reference/libUseReference.a ../obj
 	
-Reference/UseReference.o: Reference/UseReference.cpp
-	$(CC) $(CFLAGS) $(INC) -o Reference/UseReference.o Reference/UseReference.cpp
+Concept/Reference/UseReference.o: Concept/Reference/UseReference.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Reference/UseReference.o Concept/Reference/UseReference.cpp
 	
-Reference/ObjectReference1.o: Reference/ObjectReference1.cpp
-	$(CC) $(CFLAGS) $(INC) -o Reference/ObjectReference1.o Reference/ObjectReference1.cpp
+Concept/Reference/ObjectReference1.o: Concept/Reference/ObjectReference1.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Reference/ObjectReference1.o Concept/Reference/ObjectReference1.cpp
 	
-Reference/ObjectReference2.o: Reference/ObjectReference2.cpp
-	$(CC) $(CFLAGS) $(INC) -o Reference/ObjectReference2.o Reference/ObjectReference2.cpp
+Concept/Reference/ObjectReference2.o: Concept/Reference/ObjectReference2.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Reference/ObjectReference2.o Concept/Reference/ObjectReference2.cpp
 
 ####################################
 ##### Build the Overload Example #####
 cleanOverload:
-	$(RMFORCE) Overload/UseOverload.o
-	$(RMFORCE) Overload/libUseOverload.a
+	$(RMFORCE) Concept/Overload/UseOverload.o
+	$(RMFORCE) Concept/Overload/libUseOverload.a
 	$(RMFORCE) ../obj/libUseOverload.a
 	
-../obj/libUseOverload.a: Overload/UseOverload.o
-	ar rvs Overload/libUseOverload.a Overload/UseOverload.o
-	cp Overload/libUseOverload.a ../obj
+../obj/libUseOverload.a: Concept/Overload/UseOverload.o
+	ar rvs Concept/Overload/libUseOverload.a Concept/Overload/UseOverload.o
+	cp Concept/Overload/libUseOverload.a ../obj
 	
-Overload/UseOverload.o: Overload/UseOverload.cpp
-	$(CC) $(CFLAGS) $(INC) -o Overload/UseOverload.o Overload/UseOverload.cpp
+Concept/Overload/UseOverload.o: Concept/Overload/UseOverload.cpp
+	$(CC) $(CFLAGS) $(INC) -o Concept/Overload/UseOverload.o Concept/Overload/UseOverload.cpp
+
+#########################################
+#####     The Pattern Examples      #####
 
 #####################################
 ##### Build the Factory Example #####
