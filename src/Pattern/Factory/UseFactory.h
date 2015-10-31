@@ -9,7 +9,7 @@
 #define SRC_PATTERN_FACTORY_USEFACTORY_H_
 
 #include "../../Concept/Inheritance/UseInheritance.h"
-#include "UseEnumeration.h"
+#include "../../DataType/Enumeration/UseEnumeration.h"
 
 namespace gitux {
 

@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-#include "../Enumeration/UseEnumeration.h"
+#include "../../DataType/Enumeration/UseEnumeration.h"
 
 namespace gitux {
 

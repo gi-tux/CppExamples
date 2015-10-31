@@ -5,12 +5,12 @@
  *      Author: kelly
  */
 
-#ifndef SRC_VECTOR_USEVECTOR_H_
-#define SRC_VECTOR_USEVECTOR_H_
+#ifndef SRC_DATATYPE_VECTOR_USEVECTOR_H_
+#define SRC_DATATYPE_VECTOR_USEVECTOR_H_
 
 #include <vector>
 
-#include "../Concept/Inheritance/UseInheritance.h"
+#include "../../Concept/Inheritance/UseInheritance.h"
 
 namespace gitux {
 
@@ -32,4 +32,4 @@ private:
 
 } /* namespace gitux */
 
-#endif /* SRC_VECTOR_USEVECTOR_H_ */
+#endif /* SRC_DATATYPE_VECTOR_USEVECTOR_H_ */

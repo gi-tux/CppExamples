@@ -12,9 +12,9 @@
 #include "Concept/Inheritance/UseInheritance.h"
 #include "Concept/Overload/UseOverload.h"
 #include "Concept/Reference/UseReference.h"
-#include "Enumeration/UseEnumeration.h"
-#include "Vector/UseVector.h"
-#include "Deque/UseDeque.h"
+#include "DataType/Deque/UseDeque.h"
+#include "DataType/Enumeration/UseEnumeration.h"
+#include "DataType/Vector/UseVector.h"
 #include "Pattern/Builder/UseBuilder.h"
 #include "Pattern/Factory/UseFactory.h"
 

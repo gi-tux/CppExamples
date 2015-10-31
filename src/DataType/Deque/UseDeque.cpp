@@ -5,9 +5,10 @@
  *      Author: kelly
  */
 
+#include "UseDeque.h"
+
 #include <iostream>
 
-#include "UseDeque.h"
 
 namespace gitux {
 

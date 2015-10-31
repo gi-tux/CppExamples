@@ -8,7 +8,7 @@
 #ifndef SRC_CONCEPT_INHERITANCE_SHAPE_H_
 #define SRC_CONCEPT_INHERITANCE_SHAPE_H_
 
-#include "UseEnumeration.h"
+#include "../../DataType/Enumeration/UseEnumeration.h"
 
 namespace gitux {
 

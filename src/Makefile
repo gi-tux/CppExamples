@@ -17,44 +17,44 @@ CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
 #########################################
 ##### Build the Enumeration Example #####
 cleanEnumeration:
-	$(RMFORCE) Enumeration/UseEnumeration.o
-	$(RMFORCE) Enumeration/libUseEnumeration.a
+	$(RMFORCE) DataType/Enumeration/UseEnumeration.o
+	$(RMFORCE) DataType/Enumeration/libUseEnumeration.a
 	$(RMFORCE) ../obj/libUseEnumeration.a
 	
-../obj/libUseEnumeration.a: Enumeration/UseEnumeration.o
-	ar rvs Enumeration/libUseEnumeration.a Enumeration/UseEnumeration.o
-	cp Enumeration/libUseEnumeration.a ../obj
+../obj/libUseEnumeration.a: DataType/Enumeration/UseEnumeration.o
+	ar rvs DataType/Enumeration/libUseEnumeration.a DataType/Enumeration/UseEnumeration.o
+	cp DataType/Enumeration/libUseEnumeration.a ../obj
 	
-Enumeration/UseEnumeration.o: Enumeration/UseEnumeration.cpp
-	$(CC) $(CFLAGS) $(INC) -o Enumeration/UseEnumeration.o Enumeration/UseEnumeration.cpp
+DataType/Enumeration/UseEnumeration.o: DataType/Enumeration/UseEnumeration.cpp
+	$(CC) $(CFLAGS) $(INC) -o DataType/Enumeration/UseEnumeration.o DataType/Enumeration/UseEnumeration.cpp
 	
 ####################################
 ##### Build the Vector Example #####
 cleanVector:
-	$(RMFORCE) Vector/UseVector.o
-	$(RMFORCE) Vector/libUseVector.a
+	$(RMFORCE) DataType/Vector/UseVector.o
+	$(RMFORCE) DataType/Vector/libUseVector.a
 	$(RMFORCE) ../obj/libUseVector.a
 	
-../obj/libUseVector.a: Vector/UseVector.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
-	ar rvs Vector/libUseVector.a Vector/UseVector.o
-	cp Vector/libUseVector.a ../obj
+../obj/libUseVector.a: DataType/Vector/UseVector.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
+	ar rvs DataType/Vector/libUseVector.a DataType/Vector/UseVector.o
+	cp DataType/Vector/libUseVector.a ../obj
 	
-Vector/UseVector.o: Vector/UseVector.cpp
-	$(CC) $(CFLAGS) $(INC) -o Vector/UseVector.o Vector/UseVector.cpp
+DataType/Vector/UseVector.o: DataType/Vector/UseVector.cpp
+	$(CC) $(CFLAGS) $(INC) -o DataType/Vector/UseVector.o DataType/Vector/UseVector.cpp
 
 ####################################
 ##### Build the Deque Example  #####
 cleanDeque:
-	$(RMFORCE) Deque/UseDeque.o
-	$(RMFORCE) Deque/libUseDeque.a
+	$(RMFORCE) DataType/Deque/UseDeque.o
+	$(RMFORCE) DataType/Deque/libUseDeque.a
 	$(RMFORCE) ../obj/libUseDeque.a
 	
-../obj/libUseDeque.a: Deque/UseDeque.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
-	ar rvs Deque/libUseDeque.a Deque/UseDeque.o
-	cp Deque/libUseDeque.a ../obj
+../obj/libUseDeque.a: DataType/Deque/UseDeque.o ../obj/libUseInheritance.a ../obj/libUseEnumeration.a
+	ar rvs DataType/Deque/libUseDeque.a DataType/Deque/UseDeque.o
+	cp DataType/Deque/libUseDeque.a ../obj
 	
-Deque/UseDeque.o: Deque/UseDeque.cpp
-	$(CC) $(CFLAGS) $(INC) -o Deque/UseDeque.o Deque/UseDeque.cpp
+DataType/Deque/UseDeque.o: DataType/Deque/UseDeque.cpp
+	$(CC) $(CFLAGS) $(INC) -o DataType/Deque/UseDeque.o DataType/Deque/UseDeque.cpp
 
 #########################################
 #####     The Concept Examples      #####
