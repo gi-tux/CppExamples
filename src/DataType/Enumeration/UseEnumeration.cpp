@@ -5,10 +5,11 @@
  *      Author: kfulks
  */
 
+#include "UseEnumeration.h"
+
 #include <iostream>
 #include <string>
 
-#include "UseEnumeration.h"
 
 namespace gitux {
 

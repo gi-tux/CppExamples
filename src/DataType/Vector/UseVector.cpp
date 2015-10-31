@@ -5,9 +5,10 @@
  *      Author: kelly
  */
 
+#include "UseVector.h"
+
 #include <iostream>
 
-#include "UseVector.h"
 
 namespace gitux {
 

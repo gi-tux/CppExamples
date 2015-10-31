@@ -5,8 +5,8 @@
  *      Author: kfulks
  */
 
-#ifndef SRC_ENUMERATION_USEENUMERATION_H_
-#define SRC_ENUMERATION_USEENUMERATION_H_
+#ifndef SRC_DATATYPE_ENUMERATION_USEENUMERATION_H_
+#define SRC_DATATYPE_ENUMERATION_USEENUMERATION_H_
 
 #include <string>
 
@@ -67,4 +67,4 @@ private:
 
 } /* namespace gitux */
 
-#endif /* SRC_ENUMERATION_USEENUMERATION_H_ */
+#endif /* SRC_DATATYPE_ENUMERATION_USEENUMERATION_H_ */

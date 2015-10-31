@@ -5,12 +5,12 @@
  *      Author: kelly
  */
 
-#ifndef SRC_DEQUE_USEDEQUE_H_
-#define SRC_DEQUE_USEDEQUE_H_
+#ifndef SRC_DATATYPE_DEQUE_USEDEQUE_H_
+#define SRC_DATATYPE_DEQUE_USEDEQUE_H_
 
 #include <deque>
 
-#include "../Concept/Inheritance/UseInheritance.h"
+#include "../../Concept/Inheritance/UseInheritance.h"
 
 namespace gitux {
 
@@ -46,4 +46,4 @@ private:
 
 } /* namespace gitux */
 
-#endif /* SRC_DEQUE_USEDEQUE_H_ */
+#endif /* SRC_DATATYPE_DEQUE_USEDEQUE_H_ */
