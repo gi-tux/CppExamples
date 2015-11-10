@@ -1,13 +1,13 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample // ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a
+all: CppExample // ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 
-clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder
+clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder cleanSingleton
 	$(RMFORCE) CppExample
 	$(RMFORCE) ../bin/CppExample
 
-CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a
+CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
@@ -156,4 +156,17 @@ Pattern/Builder/RectangleBuilder.o: Pattern/Builder/RectangleBuilder.cpp
 	
 Pattern/Builder/TriangleBuilder.o: Pattern/Builder/TriangleBuilder.cpp
 	$(CC) $(CFLAGS) $(INC) -o Pattern/Builder/TriangleBuilder.o Pattern/Builder/TriangleBuilder.cpp
+
+#####################################
+##### Build the Singleton Example #####
+cleanSingleton:
+	$(RMFORCE) Pattern/Singleton/UseSingleton.o
+	$(RMFORCE) Pattern/Singleton/libUseSingleton.a
+	$(RMFORCE) ../obj/libUseSingleton.a
+
+../obj/libUseSingleton.a: Pattern/Singleton/UseSingleton.o
+	ar rvs Pattern/Singleton/libUseSingleton.a Pattern/Singleton/UseSingleton.o
+	cp Pattern/Singleton/libUseSingleton.a ../obj
 	
+Pattern/Singleton/UseSingleton.o: Pattern/Singleton/UseSingleton.cpp
+	$(CC) $(CFLAGS) $(INC) -o Pattern/Singleton/UseSingleton.o Pattern/Singleton/UseSingleton.cpp
