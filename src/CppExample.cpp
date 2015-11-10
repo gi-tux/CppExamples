@@ -22,12 +22,7 @@
 using namespace std;
 using namespace gitux;
 
-static void enumerationExample() {
-	UseEnumeration *enumEx = new UseEnumeration();
-	cout << enumEx->getEnumValue(UseEnumeration::e_shape::Polygon) << endl;
-	delete enumEx;
-}
-
+// Concepts
 static void inheritanceExample() {
 	string yesOrNo = "";
 
@@ -65,24 +60,20 @@ static void inheritanceExample() {
 	delete triangle;
 }
 
-static void vectorExample() {
-	UseVector *vector = new UseVector();
-	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
-	circle->setRadius(3);
-	vector->pushBackVector(circle);
-	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
-	rectangle->setHeight(3);
-	rectangle->setWidth(4);
-	vector->pushBackVector(rectangle);
-	Shape *triangle = UseFactory::makeShape(UseEnumeration::e_shape::Triangle);
-	triangle->setHeight(3);
-	triangle->setWidth(4);
-	vector->pushBackVector(triangle);
+static void overloadExample() {
+	UseOverload myOverload;
 
-	vector->printVector();
-	delete vector;
+	myOverload.printNumber(1);
+	myOverload.printNumber(2.1);
 }
 
+static void referenceExample() {
+	UseReference myReference;
+
+	myReference.Reference2Pointer();
+}
+
+// Datatypes
 static void dequeExample() {
 	UseDeque myDeque;
 	Shape *circle = new Circle(3);
@@ -121,19 +112,31 @@ static void dequeExample() {
 	delete circle;
 }
 
-static void referenceExample() {
-	UseReference myReference;
-
-	myReference.Reference2Pointer();
+static void enumerationExample() {
+	UseEnumeration *enumEx = new UseEnumeration();
+	cout << enumEx->getEnumValue(UseEnumeration::e_shape::Polygon) << endl;
+	delete enumEx;
 }
 
-static void overloadExample() {
-	UseOverload myOverload;
+static void vectorExample() {
+	UseVector *vector = new UseVector();
+	Shape *circle = UseFactory::makeShape(UseEnumeration::e_shape::Circle);
+	circle->setRadius(3);
+	vector->pushBackVector(circle);
+	Shape *rectangle = UseFactory::makeShape(UseEnumeration::e_shape::Rectangle);
+	rectangle->setHeight(3);
+	rectangle->setWidth(4);
+	vector->pushBackVector(rectangle);
+	Shape *triangle = UseFactory::makeShape(UseEnumeration::e_shape::Triangle);
+	triangle->setHeight(3);
+	triangle->setWidth(4);
+	vector->pushBackVector(triangle);
 
-	myOverload.printNumber(1);
-	myOverload.printNumber(2.1);
+	vector->printVector();
+	delete vector;
 }
 
+// Patterns
 static void builderExample() {
 	ShapeBuilder *myRectangleBuilder = new RectangleBuilder();
 	myRectangleBuilder->createShape();
@@ -179,6 +182,7 @@ static void singletonExample() {
 	delete shapeSingleton;
 }
 
+// MAIN
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
