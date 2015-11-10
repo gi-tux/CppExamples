@@ -17,6 +17,7 @@
 #include "DataType/Vector/UseVector.h"
 #include "Pattern/Builder/UseBuilder.h"
 #include "Pattern/Factory/UseFactory.h"
+#include "Pattern/Singleton/UseSingleton.h"
 
 using namespace std;
 using namespace gitux;
@@ -167,6 +168,17 @@ static void factoryExample() {
 	delete rectangle;
 }
 
+static void singletonExample() {
+	UseSingleton *shapeSingleton = new UseSingleton();
+	Shape *myCircle = shapeSingleton->getCircle3();
+	Shape *myRectangle = shapeSingleton->getRectangle34();
+	Shape *myTriangle = shapeSingleton->getTriangle34();
+	Shape *myCircle2 = shapeSingleton->getCircle3();
+	Shape *myRectangle2 = shapeSingleton->getRectangle34();
+	Shape *myTriangle2 = shapeSingleton->getTriangle34();
+	delete shapeSingleton;
+}
+
 int main() {
 	cout << "===== Hello, world! =====" << endl;
 	cout << "Hello, world!" << endl;
@@ -204,5 +216,9 @@ int main() {
 
 	cout << "===== factory =====" << endl;
 	factoryExample();
+	cout << "=====" << endl << endl;
+
+	cout << "===== singleton =====" << endl;
+	singletonExample();
 	cout << "=====" << endl << endl;
 }
