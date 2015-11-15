@@ -19,6 +19,16 @@ Circle::Circle() {
 	cout << "default Circle constructor" << endl;
 }
 
+Circle::Circle(Circle *old) {
+	radius = old->radius;
+	shapeType = old->shapeType;
+	cout << "copy Circle constructor" << endl;
+}
+
+Circle::Circle(Shape *old) : Shape(old) {
+	cout << "copy2 Circle constructor" << endl;
+}
+
 Circle::Circle(double newRadius) {
 	shapeType = UseEnumeration::e_shape::Circle;
 	radius = newRadius;

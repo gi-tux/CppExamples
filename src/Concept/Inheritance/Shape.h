@@ -30,6 +30,7 @@ public:
 
 protected:
 	Shape();
+	Shape(Shape*);
 
 	double height;
 	double width;

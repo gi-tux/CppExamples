@@ -15,6 +15,8 @@ namespace gitux {
 class Rectangle: public Shape {
 public:
 	Rectangle();
+	Rectangle(Rectangle *old);
+	Rectangle(Shape *old);
 	Rectangle(double newHeight, double newWidth);
 	virtual ~Rectangle();
 
