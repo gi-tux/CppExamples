@@ -21,6 +21,14 @@ Shape::Shape() :
 	cout << "Shape constructor" << endl;
 }
 
+Shape::Shape(Shape *old) :
+	height(old->height),
+	width(old->width),
+	radius(old->radius),
+	shapeType(old->shapeType){
+	cout << "copy Shape constructor" << endl;
+}
+
 Shape::~Shape() {
 	cout << "Shape destructor" << endl;
 }

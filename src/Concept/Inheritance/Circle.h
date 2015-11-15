@@ -19,6 +19,8 @@ namespace gitux {
 class Circle: public Shape {
 public:
 	Circle();
+	Circle(Circle *old);
+	Circle(Shape *old);
 	Circle(double newRadius);
 	virtual ~Circle();
 

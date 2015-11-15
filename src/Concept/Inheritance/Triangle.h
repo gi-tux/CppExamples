@@ -15,6 +15,8 @@ namespace gitux {
 class Triangle: public Shape {
 public:
 	Triangle();
+	Triangle(Triangle *old);
+	Triangle(Shape *old);
 	Triangle(double newHeight, double newWidth);
 	virtual ~Triangle();
 

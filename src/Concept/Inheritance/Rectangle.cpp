@@ -20,6 +20,17 @@ Rectangle::Rectangle() {
 	cout << "default Rectangle constructor" << endl;
 }
 
+Rectangle::Rectangle(Rectangle *old) {
+	shapeType = old->shapeType;
+	height = old->height;
+	width = old->width;
+	cout << "copy Rectangle constructor" << endl;
+}
+
+Rectangle::Rectangle(Shape *old) : Shape(old) {
+	cout << "copy2 Rectangle constructor" << endl;
+}
+
 Rectangle::Rectangle(double newHeight, double newWidth) {
 	shapeType = UseEnumeration::e_shape::Rectangle;
 	height = newHeight;

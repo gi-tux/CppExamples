@@ -19,6 +19,17 @@ Triangle::Triangle() {
 	cout << "default Triangle constructor" << endl;
 }
 
+Triangle::Triangle(Triangle *old) {
+	shapeType = old->shapeType;
+	height = old->height;
+	width = old->width;
+	cout << "copy Triangle constructor" << endl;
+}
+
+Triangle::Triangle(Shape *old) : Shape(old) {
+	cout << "copy2 Triangle constructor" << endl;
+}
+
 Triangle::Triangle(double newHeight, double newWidth) {
 	shapeType = UseEnumeration::e_shape::Triangle;
 	height = newHeight;

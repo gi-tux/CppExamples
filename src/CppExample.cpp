@@ -32,7 +32,15 @@ static void inheritanceExample() {
 	Circle *myCircle = dynamic_cast<Circle*>(circle);
 	yesOrNo = myCircle->isCircle() ? "yes" : "no";
 	cout << "Is this a circle? " << yesOrNo << endl;
-	cout << "Shape type is: " << circle->getShapeType() << endl;
+	cout << "Shape type is: " << circle->getShapeType() << endl << endl;
+	Shape *circle2 = new Circle(myCircle);
+	cout << "Area of circle with a radius of " << circle->getRadius() << " is : "
+			<< circle->getArea() << endl << endl;
+	Shape *circle3 = new Circle(circle);
+	cout << "Area of circle with a radius of " << circle3->getRadius() << " is : "
+			<< circle3->getArea() << endl;
+	delete circle3;
+	delete circle2;
 	delete circle;
 	cout << endl;
 
@@ -45,7 +53,17 @@ static void inheritanceExample() {
 	cout << "Is this a rectangle? " << yesOrNo << endl;
 	yesOrNo = myRectangle->isSquare() ? "yes" : "no";
 	cout << "Is this a square? " << yesOrNo << endl;
-	cout << "Shape type is: " << rectangle->getShapeType() << endl;
+	cout << "Shape type is: " << rectangle->getShapeType() << endl << endl;
+	Shape *rectangle2 = new Rectangle(myRectangle);
+	cout << "Area of rectangle with a width of " << rectangle2->getWidth()
+			<< " and a height of " << rectangle2->getHeight()
+			<< " is : " << rectangle2->getArea() << endl << endl;
+	Shape *rectangle3 = new Rectangle(rectangle);
+	cout << "Area of rectangle with a width of " << rectangle3->getWidth()
+			<< " and a height of " << rectangle3->getHeight()
+			<< " is : " << rectangle3->getArea() << endl;
+	delete rectangle3;
+	delete rectangle2;
 	delete rectangle;
 	cout << endl;
 
@@ -56,7 +74,17 @@ static void inheritanceExample() {
 	Triangle *myTriangle = dynamic_cast<Triangle*>(triangle);
 	yesOrNo = myTriangle->isTriangle() ? "yes" : "no";
 	cout << "Is this a triangle? " << yesOrNo << endl;
-	cout << "Shape type is: " << triangle->getShapeType() << endl;
+	cout << "Shape type is: " << triangle->getShapeType() << endl << endl;
+	Shape *triangle2 = new Triangle(myTriangle);
+	cout << "Area of triangle with a width of " << triangle2->getWidth()
+			<< " and a height of " << triangle2->getHeight()
+			<< " is : " << triangle2->getArea() << endl << endl;
+	Shape *triangle3 = new Triangle(triangle);
+	cout << "Area of triangle with a width of " << triangle3->getWidth()
+			<< " and a height of " << triangle3->getHeight()
+			<< " is : " << triangle3->getArea() << endl;
+	delete triangle3;
+	delete triangle2;
 	delete triangle;
 }
 
