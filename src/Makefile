@@ -1,7 +1,7 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample // ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
+all: CppExample # ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 
 clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder cleanSingleton
 	$(RMFORCE) CppExample

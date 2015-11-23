@@ -15,7 +15,7 @@ namespace gitux {
 using namespace std;
 
 Triangle::Triangle() {
-	shapeType = UseEnumeration::e_shape::Triangle;
+	shapeType = UseEnumeration::Triangle;
 	cout << "default Triangle constructor" << endl;
 }
 
@@ -31,7 +31,7 @@ Triangle::Triangle(Shape *old) : Shape(old) {
 }
 
 Triangle::Triangle(double newHeight, double newWidth) {
-	shapeType = UseEnumeration::e_shape::Triangle;
+	shapeType = UseEnumeration::Triangle;
 	height = newHeight;
 	width = newWidth;
 	cout << "alternate Triangle constructor" << endl;

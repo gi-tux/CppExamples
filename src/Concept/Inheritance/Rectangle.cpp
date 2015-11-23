@@ -16,7 +16,7 @@ namespace gitux {
 using namespace std;
 
 Rectangle::Rectangle() {
-	shapeType = UseEnumeration::e_shape::Rectangle;
+	shapeType = UseEnumeration::Rectangle;
 	cout << "default Rectangle constructor" << endl;
 }
 
@@ -32,7 +32,7 @@ Rectangle::Rectangle(Shape *old) : Shape(old) {
 }
 
 Rectangle::Rectangle(double newHeight, double newWidth) {
-	shapeType = UseEnumeration::e_shape::Rectangle;
+	shapeType = UseEnumeration::Rectangle;
 	height = newHeight;
 	width = newWidth;
 	cout << "alternate Rectangle constructor" << endl;

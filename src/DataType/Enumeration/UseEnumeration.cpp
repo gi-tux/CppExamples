@@ -16,6 +16,25 @@ namespace gitux {
 using namespace std;
 
 UseEnumeration::UseEnumeration() {
+	UseEnumeration::conicSection = "Conic Section";
+	UseEnumeration::circle = "Circle";
+	UseEnumeration::ellipse = "Ellipse";
+	UseEnumeration::parabola = "Parabola";
+	UseEnumeration::polygon = "Polygon";
+	UseEnumeration::triangle = "Triangle";
+	UseEnumeration::equilateral = "Equilateral";
+	UseEnumeration::isosceles = "Isosceles";
+	UseEnumeration::obtuse = "Obtuse";
+	UseEnumeration::acute = "Acute";
+	UseEnumeration::scalene = "Scalene";
+	UseEnumeration::quadrilateral = "Quadrilateral";
+	UseEnumeration::rectangle = "Rectangle";
+	UseEnumeration::square = "Square";
+	UseEnumeration::rhombus = "Rhombus";
+	UseEnumeration::trapezoid = "Trapezoid";
+	UseEnumeration::pentagon = "Pentagon";
+	UseEnumeration::hexagon = "Hexagon";
+	UseEnumeration::octagon = "Octagon";
 }
 
 UseEnumeration::~UseEnumeration() {
@@ -25,61 +44,61 @@ string UseEnumeration::getEnumValue(e_shape input) {
 	string returnValue = "";
 
 	switch (input) {
-	case e_shape::ConicSection:
+	case ConicSection:
 		returnValue = this->conicSection;
 		break;
-	case e_shape::Circle:
+	case Circle:
 		returnValue = this->circle;
 		break;
-	case e_shape::Ellipse:
+	case Ellipse:
 		returnValue = this->ellipse;
 		break;
-	case e_shape::Parabola:
+	case Parabola:
 		returnValue = this->parabola;
 		break;
-	case e_shape::Polygon:
+	case Polygon:
 		returnValue = this->polygon;
 		break;
-	case e_shape::Triangle:
+	case Triangle:
 		returnValue = this->triangle;
 		break;
-	case e_shape::Equilateral:
+	case Equilateral:
 		returnValue = this->equilateral;
 		break;
-	case e_shape::Isosceles:
+	case Isosceles:
 		returnValue = this->isosceles;
 		break;
-	case e_shape::Obtuse:
+	case Obtuse:
 		returnValue = this->obtuse;
 		break;
-	case e_shape::Acute:
+	case Acute:
 		returnValue = this->acute;
 		break;
-	case e_shape::Scalene:
+	case Scalene:
 		returnValue = this->scalene;
 		break;
-	case e_shape::Quadrilateral:
+	case Quadrilateral:
 		returnValue = this->quadrilateral;
 		break;
-	case e_shape::Rectangle:
+	case Rectangle:
 		returnValue = this->rectangle;
 		break;
-	case e_shape::Square:
+	case Square:
 		returnValue = this->square;
 		break;
-	case e_shape::Rhombus:
+	case Rhombus:
 		returnValue = this->rhombus;
 		break;
-	case e_shape::Trapezoid:
+	case Trapezoid:
 		returnValue = this->trapezoid;
 		break;
-	case e_shape::Pentagon:
+	case Pentagon:
 		returnValue = this->pentagon;
 		break;
-	case e_shape::Hexagon:
+	case Hexagon:
 		returnValue = this->hexagon;
 		break;
-	case e_shape::Octagon:
+	case Octagon:
 		returnValue = this->octagon;
 		break;
 	}

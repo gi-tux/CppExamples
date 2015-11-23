@@ -17,13 +17,13 @@ UseFactory::~UseFactory() {
 
 Shape* UseFactory::makeShape(UseEnumeration::e_shape whichShape) {
 	switch(whichShape) {
-	case UseEnumeration::e_shape::Circle:
+	case UseEnumeration::Circle:
 		return (new Circle());
 		break;
-	case UseEnumeration::e_shape::Rectangle:
+	case UseEnumeration::Rectangle:
 		return (new Rectangle());
 		break;
-	case UseEnumeration::e_shape::Triangle:
+	case UseEnumeration::Triangle:
 		return (new Triangle());
 		break;
 	default:

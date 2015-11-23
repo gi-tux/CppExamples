@@ -15,7 +15,7 @@ using namespace std;
 namespace gitux {
 
 Circle::Circle() {
-	shapeType = UseEnumeration::e_shape::Circle;
+	shapeType = UseEnumeration::Circle;
 	cout << "default Circle constructor" << endl;
 }
 
@@ -30,7 +30,7 @@ Circle::Circle(Shape *old) : Shape(old) {
 }
 
 Circle::Circle(double newRadius) {
-	shapeType = UseEnumeration::e_shape::Circle;
+	shapeType = UseEnumeration::Circle;
 	radius = newRadius;
 	cout << "alternate Circle constructor" << endl;
 }

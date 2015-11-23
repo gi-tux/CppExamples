@@ -44,25 +44,25 @@ public:
 	string getEnumValue(e_shape);
 
 private:
-	const string conicSection = "Conic Section";
-	const string circle = "Circle";
-	const string ellipse = "Ellipse";
-	const string parabola = "Parabola";
-	const string polygon = "Polygon";
-	const string triangle = "Triangle";
-	const string equilateral = "Equilateral";
-	const string isosceles = "Isosceles";
-	const string obtuse = "Obtuse";
-	const string acute = "Acute";
-	const string scalene = "Scalene";
-	const string quadrilateral = "Quadrilateral";
-	const string rectangle = "Rectangle";
-	const string square = "Square";
-	const string rhombus = "Rhombus";
-	const string trapezoid = "Trapezoid";
-	const string pentagon = "Pentagon";
-	const string hexagon = "Hexagon";
-	const string octagon = "Octagon";
+	string conicSection;
+	string circle;
+	string ellipse;
+	string parabola;
+	string polygon;
+	string triangle;
+	string equilateral;
+	string isosceles;
+	string obtuse;
+	string acute;
+	string scalene;
+	string quadrilateral;
+	string rectangle;
+	string square;
+	string rhombus;
+	string trapezoid;
+	string pentagon;
+	string hexagon;
+	string octagon;
 };
 
 } /* namespace gitux */
