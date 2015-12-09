@@ -32,7 +32,7 @@ TEST_F(TriangleTest, triangleSize) {
 	ASSERT_EQ(myTriangle->getHeight(), 3);
 	ASSERT_EQ(myTriangle->getWidth(), 3);
 	ASSERT_EQ(myTriangle->getRadius(), 0);
-	ASSERT_EQ(myTriangle->getArea(), 4.5);
+	ASSERT_DOUBLE_EQ(myTriangle->getArea(), 4.5);
 }
 
 TEST_F(TriangleTest, triangleType) {

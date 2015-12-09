@@ -11,7 +11,7 @@ CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
-Tests: Concept/Inheritance/TriangleTest
+Tests: Concept/Inheritance/TriangleTest Concept/Inheritance/CircleTest Concept/Inheritance/RectangleTest
 
 #########################################
 #####      The Type Examples        #####
@@ -72,7 +72,11 @@ cleanInheritance:
 	$(RMFORCE) ../obj/libUseInheritance.a
 	$(RMFORCE) Concept/Inheritance/TriangleTest
 	$(RMFORCE) ../bin/TriangleTest
-		
+	$(RMFORCE) Concept/Inheritance/CircleTest
+	$(RMFORCE) ../bin/CircleTest
+	$(RMFORCE) Concept/Inheritance/RectangleTest
+	$(RMFORCE) ../bin/RectangleTest
+
 ../obj/libUseInheritance.a: $(SHAPEOBJS)
 	ar rvs Concept/Inheritance/libUseInheritance.a $(SHAPEOBJS)
 	cp Concept/Inheritance/libUseInheritance.a ../obj
@@ -92,6 +96,14 @@ Concept/Inheritance/Triangle.o: Concept/Inheritance/Triangle.cpp
 Concept/Inheritance/TriangleTest: Concept/Inheritance/TriangleTest.cpp
 	$(CC) $(INC) Concept/Inheritance/TriangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/TriangleTest $(EXEFLAGS) #$(WFLAGS)
 	cp Concept/Inheritance/TriangleTest ../bin
+	
+Concept/Inheritance/CircleTest: Concept/Inheritance/CircleTest.cpp
+	$(CC) $(INC) Concept/Inheritance/CircleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/CircleTest $(EXEFLAGS) #$(WFLAGS)
+	cp Concept/Inheritance/CircleTest ../bin
+	
+Concept/Inheritance/RectangleTest: Concept/Inheritance/RectangleTest.cpp
+	$(CC) $(INC) Concept/Inheritance/RectangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/RectangleTest $(EXEFLAGS) #$(WFLAGS)
+	cp Concept/Inheritance/RectangleTest ../bin
 	
 ####################################
 ##### Build the Reference Example #####
