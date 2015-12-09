@@ -1,7 +1,7 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample # ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
+all: CppExample  Tests # ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 
 clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder cleanSingleton
 	$(RMFORCE) CppExample
@@ -10,6 +10,8 @@ clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cle
 CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
+
+Tests: Concept/Inheritance/TriangleTest
 
 #########################################
 #####      The Type Examples        #####
@@ -68,6 +70,8 @@ cleanInheritance:
 	$(RMFORCE) Concept/Inheritance/Triangle.o
 	$(RMFORCE) Concept/Inheritance/libUseInheritance.a
 	$(RMFORCE) ../obj/libUseInheritance.a
+	$(RMFORCE) Concept/Inheritance/TriangleTest
+	$(RMFORCE) ../bin/TriangleTest
 		
 ../obj/libUseInheritance.a: $(SHAPEOBJS)
 	ar rvs Concept/Inheritance/libUseInheritance.a $(SHAPEOBJS)
@@ -84,6 +88,10 @@ Concept/Inheritance/Rectangle.o: Concept/Inheritance/Rectangle.cpp
 
 Concept/Inheritance/Triangle.o: Concept/Inheritance/Triangle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Triangle.o Concept/Inheritance/Triangle.cpp
+	
+Concept/Inheritance/TriangleTest: Concept/Inheritance/TriangleTest.cpp
+	$(CC) $(INC) Concept/Inheritance/TriangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/TriangleTest $(EXEFLAGS) #$(WFLAGS)
+	cp Concept/Inheritance/TriangleTest ../bin
 	
 ####################################
 ##### Build the Reference Example #####
