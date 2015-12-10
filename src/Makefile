@@ -70,11 +70,8 @@ cleanInheritance:
 	$(RMFORCE) Concept/Inheritance/Triangle.o
 	$(RMFORCE) Concept/Inheritance/libUseInheritance.a
 	$(RMFORCE) ../obj/libUseInheritance.a
-	$(RMFORCE) Concept/Inheritance/TriangleTest
 	$(RMFORCE) ../bin/TriangleTest
-	$(RMFORCE) Concept/Inheritance/CircleTest
 	$(RMFORCE) ../bin/CircleTest
-	$(RMFORCE) Concept/Inheritance/RectangleTest
 	$(RMFORCE) ../bin/RectangleTest
 
 ../obj/libUseInheritance.a: $(SHAPEOBJS)
@@ -94,16 +91,13 @@ Concept/Inheritance/Triangle.o: Concept/Inheritance/Triangle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Triangle.o Concept/Inheritance/Triangle.cpp
 	
 Concept/Inheritance/TriangleTest: Concept/Inheritance/TriangleTest.cpp
-	$(CC) $(INC) Concept/Inheritance/TriangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/TriangleTest $(EXEFLAGS) #$(WFLAGS)
-	cp Concept/Inheritance/TriangleTest ../bin
+	$(CC) $(INC) Concept/Inheritance/TriangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/TriangleTest $(EXEFLAGS) #$(WFLAGS)
 	
 Concept/Inheritance/CircleTest: Concept/Inheritance/CircleTest.cpp
-	$(CC) $(INC) Concept/Inheritance/CircleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/CircleTest $(EXEFLAGS) #$(WFLAGS)
-	cp Concept/Inheritance/CircleTest ../bin
+	$(CC) $(INC) Concept/Inheritance/CircleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/CircleTest $(EXEFLAGS) #$(WFLAGS)
 	
 Concept/Inheritance/RectangleTest: Concept/Inheritance/RectangleTest.cpp
-	$(CC) $(INC) Concept/Inheritance/RectangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o Concept/Inheritance/RectangleTest $(EXEFLAGS) #$(WFLAGS)
-	cp Concept/Inheritance/RectangleTest ../bin
+	$(CC) $(INC) Concept/Inheritance/RectangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/RectangleTest $(EXEFLAGS) #$(WFLAGS)
 	
 ####################################
 ##### Build the Reference Example #####
