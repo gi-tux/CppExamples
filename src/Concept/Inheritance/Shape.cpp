@@ -18,7 +18,7 @@ Shape::Shape() :
 	width(0.0),
 	radius(0.0),
 	shapeType() {
-	cout << "Shape constructor" << endl;
+	// cout << "Shape constructor" << endl;
 }
 
 Shape::Shape(Shape *old) :
@@ -26,11 +26,11 @@ Shape::Shape(Shape *old) :
 	width(old->width),
 	radius(old->radius),
 	shapeType(old->shapeType){
-	cout << "copy Shape constructor" << endl;
+	// cout << "copy Shape constructor" << endl;
 }
 
 Shape::~Shape() {
-	cout << "Shape destructor" << endl;
+	// cout << "Shape destructor" << endl;
 }
 
 void Shape::setHeight(double value) {

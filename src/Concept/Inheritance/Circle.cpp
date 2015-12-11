@@ -5,10 +5,8 @@
  *      Author: kelly
  */
 
-#include "../../Concept/Inheritance/Circle.h"
-
 #include <iostream>
-
+#include "../../Concept/Inheritance/Circle.h"
 
 using namespace std;
 
@@ -16,27 +14,27 @@ namespace gitux {
 
 Circle::Circle() {
 	shapeType = UseEnumeration::Circle;
-	cout << "default Circle constructor" << endl;
+	// cout << "default Circle constructor" << endl;
 }
 
 Circle::Circle(Circle *old) {
 	radius = old->radius;
 	shapeType = old->shapeType;
-	cout << "copy Circle constructor" << endl;
+	// cout << "copy Circle constructor" << endl;
 }
 
 Circle::Circle(Shape *old) : Shape(old) {
-	cout << "copy2 Circle constructor" << endl;
+	// cout << "copy2 Circle constructor" << endl;
 }
 
 Circle::Circle(double newRadius) {
 	shapeType = UseEnumeration::Circle;
 	radius = newRadius;
-	cout << "alternate Circle constructor" << endl;
+	// cout << "alternate Circle constructor" << endl;
 }
 
 Circle::~Circle() {
-	cout << "Circle destructor" << endl;
+	// cout << "Circle destructor" << endl;
 }
 
 double Circle::getArea() {

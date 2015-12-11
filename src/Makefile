@@ -1,7 +1,7 @@
 # src/Makefile
 include ../config/make.conf
 
-all: CppExample  Tests # ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
+all: CppExample  Tests ExecuteTests # ../obj/libUseEnumeration.a ../obj/libUseInheritance.a ../obj/libUseFactory.a ../obj/libUseVector.a ../obj/libUseDeque.a ../obj/libUseReference.a ../obj/libUseOverload.a ../obj/libUseBuilder.a ../obj/libUseSingleton.a
 
 clean: cleanEnumeration cleanInheritance cleanFactory cleanVector cleanDeque cleanReference cleanOverload cleanBuilder cleanSingleton
 	$(RMFORCE) CppExample
@@ -11,10 +11,13 @@ CppExample: CppExample.cpp ../obj/libUseEnumeration.a ../obj/libUseInheritance.a
 	$(CC) $(INC) CppExample.cpp $(LIBS) -o CppExample $(EXEFLAGS) #$(WFLAGS)
 	cp CppExample ../bin/
 
-Tests: Concept/Inheritance/TriangleTest Concept/Inheritance/CircleTest Concept/Inheritance/RectangleTest
+Tests: ../bin/TriangleTest ../bin/CircleTest ../bin/RectangleTest
 
+ExecuteTests: runShapeTests
+	
 #########################################
 #####      The Type Examples        #####
+#########################################
 
 #########################################
 ##### Build the Enumeration Example #####
@@ -60,6 +63,7 @@ DataType/Deque/UseDeque.o: DataType/Deque/UseDeque.cpp
 
 #########################################
 #####     The Concept Examples      #####
+#########################################
 
 #########################################
 ##### Build the Inheritance Example #####
@@ -90,13 +94,13 @@ Concept/Inheritance/Rectangle.o: Concept/Inheritance/Rectangle.cpp
 Concept/Inheritance/Triangle.o: Concept/Inheritance/Triangle.cpp
 	$(CC) $(CFLAGS) $(INC) -o Concept/Inheritance/Triangle.o Concept/Inheritance/Triangle.cpp
 	
-Concept/Inheritance/TriangleTest: Concept/Inheritance/TriangleTest.cpp
+../bin/TriangleTest: Concept/Inheritance/TriangleTest.cpp
 	$(CC) $(INC) Concept/Inheritance/TriangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/TriangleTest $(EXEFLAGS) #$(WFLAGS)
 	
-Concept/Inheritance/CircleTest: Concept/Inheritance/CircleTest.cpp
+../bin/CircleTest: Concept/Inheritance/CircleTest.cpp
 	$(CC) $(INC) Concept/Inheritance/CircleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/CircleTest $(EXEFLAGS) #$(WFLAGS)
 	
-Concept/Inheritance/RectangleTest: Concept/Inheritance/RectangleTest.cpp
+../bin/RectangleTest: Concept/Inheritance/RectangleTest.cpp
 	$(CC) $(INC) Concept/Inheritance/RectangleTest.cpp -L../obj -lgtest -lpthread -lUseInheritance -lUseEnumeration -o ../bin/RectangleTest $(EXEFLAGS) #$(WFLAGS)
 	
 ####################################
@@ -136,6 +140,7 @@ Concept/Overload/UseOverload.o: Concept/Overload/UseOverload.cpp
 
 #########################################
 #####     The Pattern Examples      #####
+#########################################
 
 #####################################
 ##### Build the Factory Example #####
@@ -171,7 +176,7 @@ Pattern/Builder/RectangleBuilder.o: Pattern/Builder/RectangleBuilder.cpp
 Pattern/Builder/TriangleBuilder.o: Pattern/Builder/TriangleBuilder.cpp
 	$(CC) $(CFLAGS) $(INC) -o Pattern/Builder/TriangleBuilder.o Pattern/Builder/TriangleBuilder.cpp
 
-#####################################
+#######################################
 ##### Build the Singleton Example #####
 cleanSingleton:
 	$(RMFORCE) Pattern/Singleton/UseSingleton.o
@@ -184,3 +189,11 @@ cleanSingleton:
 	
 Pattern/Singleton/UseSingleton.o: Pattern/Singleton/UseSingleton.cpp
 	$(CC) $(CFLAGS) $(INC) -o Pattern/Singleton/UseSingleton.o Pattern/Singleton/UseSingleton.cpp
+
+#########################
+##### Run the Tests #####
+#########################
+runShapeTests:
+	../bin/TriangleTest
+	../bin/CircleTest
+	../bin/RectangleTest

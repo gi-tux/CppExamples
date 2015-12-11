@@ -24,14 +24,14 @@ public:
 
 protected:
 	virtual void SetUp() {
-		cout << "Setup" << endl;
+		// cout << "Setup" << endl;
 		myTriangle = new Triangle(3, 3);
 	}
 
 	virtual void TearDown() {
 		// Code here will be called immediately after each test
 		// (right before the destructor).
-		cout << "TearDown" << endl;
+		// cout << "TearDown" << endl;
 		delete myTriangle;
 	}
 };

@@ -5,10 +5,8 @@
  *      Author: kelly
  */
 
-#include "../../Concept/Inheritance/Triangle.h"
-
 #include <iostream>
-
+#include "../../Concept/Inheritance/Triangle.h"
 
 namespace gitux {
 
@@ -16,30 +14,30 @@ using namespace std;
 
 Triangle::Triangle() {
 	shapeType = UseEnumeration::Triangle;
-	cout << "default Triangle constructor" << endl;
+	// cout << "default Triangle constructor" << endl;
 }
 
 Triangle::Triangle(Triangle *old) {
 	shapeType = old->shapeType;
 	height = old->height;
 	width = old->width;
-	cout << "copy Triangle constructor" << endl;
+	// cout << "copy Triangle constructor" << endl;
 }
 
 Triangle::Triangle(Shape *old) : Shape(old) {
-	cout << "copy2 Triangle constructor" << endl;
+	// cout << "copy2 Triangle constructor" << endl;
 }
 
 Triangle::Triangle(double newHeight, double newWidth) {
 	shapeType = UseEnumeration::Triangle;
 	height = newHeight;
 	width = newWidth;
-	cout << "alternate Triangle constructor" << endl;
+	// cout << "alternate Triangle constructor" << endl;
 }
 
 
 Triangle::~Triangle() {
-	cout << "Triangle destructor" << endl;
+	// cout << "Triangle destructor" << endl;
 }
 
 double Triangle::getArea() {
